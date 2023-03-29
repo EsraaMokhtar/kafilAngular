@@ -1,0 +1,90 @@
+
+<div class="d-flex justify-content-center">
+
+
+    <form  class="m-2 w-50 " [formGroup]="userFormGroup">
+        <!-- <div class="mb-3">
+          <label for="usrName" class="form-label">Full Name</label>
+         
+          <input type="text" class="form-control" name="usrName" id="usrName" value="user name" formControlName="fullName" [class.is-valid]="fullName?.valid" [class.is-invalid]="fullName?.invalid">
+          <div class="alert alert-danger" [hidden]="fullName?.valid||fullName?.untouched">
+            <small *ngIf="fullName?.errors?.['required']">Name is required</small>
+            <small *ngIf="fullName?.errors?.['minlength']">Full name must be at least 5 characters</small>
+          </div>
+          
+        </div> -->
+      
+        <div class="mb-3">
+          <label for="usrEmail" class="form-label">Email</label>
+          <input type="email" class="form-control" name="usrEmail" id="usrEmail" formControlName="email" [class.is-valid]="email?.valid" [class.is-invalid]="email?.invalid">
+          <div class="alert alert-danger" [hidden]="email?.valid||email?.untouched">
+            <small *ngIf="email?.errors?.['required']">Email is required</small>
+            <small *ngIf="email?.errors?.['email']">please enter a correct email</small>
+          </div>
+        </div>
+    
+      
+        <!-- <div formArrayName="mobileNo">
+          <div class="mb-3 ms-4" *ngFor="let mob of mobileNo.controls;let i=index">
+            <label for="usrMobile{{i+1}}" class="form-label">Mobile No.{{i+1}}</label>
+            <input type="number"  class="form-control" name="usrMobile{{i+1}}" id="usrMobile{{i+1}}" [formControlName]="i" [pattern]="mobilePatren">
+            <div class="ms-auto d-block d-flex">
+              <button class="btn btn-primary" (click)="addMobile()" *ngIf="i==mobileNo.controls.length-1&&mob.value">+</button>
+              <button class="btn btn-danger" (click)="DeletMobile(i)" *ngIf="i>0">-</button>
+            </div>
+          </div>
+        </div> -->
+    
+        <!-- <div formGroupName="address">
+          Address:
+          <div class="mb-3 ms-2">
+            <label for="usrCity" class="form-label">city</label>
+            <input type="text" class="form-control" name="usrCity" id="usrCity" formControlName="city" [class.is-valid]="city?.valid" [class.is-invalid]="city?.invalid">
+            <div class="alert alert-danger" [hidden]="city?.valid||city?.untouched">
+              <small *ngIf="city?.errors?.['required']">city is required</small>
+            </div>
+          </div>
+          <div class="mb-3 ms-2">
+            <label for="PostalCode" class="form-label">Postal Code</label>
+            <input type="text"  class="form-control" name="usrStreet" id="PostalCode" formControlName="PostalCode"  [class.is-valid]="PostalCode?.valid" [class.is-invalid]="PostalCode?.invalid">
+            <div class="alert alert-danger" [hidden]="PostalCode?.valid||PostalCode?.untouched">
+              <small *ngIf="PostalCode?.errors?.['required']">PostalCode is required</small>
+            </div>
+          </div>
+          <div class="mb-3 ms-2">
+            <label for="usrStreet" class="form-label">Street</label>
+            <input type="text"  class="form-control" name="usrStreet" id="usrStreet" formControlName="street"  [class.is-valid]="street?.valid" [class.is-invalid]="street?.invalid">
+            <div class="alert alert-danger" [hidden]="street?.valid||street?.untouched">
+              <small *ngIf="street?.errors?.['required']">street is required</small>
+            </div>
+          </div>
+        </div> -->
+      
+      
+        <div class="mb-3">
+          <label for="usrPass" class="form-label">Password</label>
+          <input type="password" class="form-control" name="usrPass" id="usrPass" formControlName="password"  [class.is-valid]="password?.valid" [class.is-invalid]="password?.invalid">
+          <div class="alert alert-danger" [hidden]="password?.valid||password?.untouched">
+            <small *ngIf="password?.errors?.['required']">password is required</small>
+            <small *ngIf="password?.errors?.['minlength']">password must be at least 6 characters</small>
+          </div>
+        </div>
+      
+        <!-- <div class="mb-3">
+          <label for="usrRePass" class="form-label">Retype Password</label>
+          <input type="password"  class="form-control" name="usrRePass" id="usrRePass" formControlName="rePassword"  [class.is-valid]="rePassword?.valid" [class.is-invalid]="rePassword?.invalid">
+          <div class="alert alert-danger" [hidden]="rePassword?.valid||rePassword?.untouched">
+            <small *ngIf="rePassword?.errors?.['required']">password is required</small>
+            <small *ngIf="rePassword?.errors?.['minlength']">Password must be at least 6 characters</small>
+          </div>
+        </div> -->
+        
+      
+      <br>
+        <!-- <button type="submit" class="btn btn-success" (click)="register()">Submit</button> -->
+    
+        <h2 class="bg-info">{{userFormGroup.value | json}}</h2>
+    </form>
+      
+    
+    </div>
